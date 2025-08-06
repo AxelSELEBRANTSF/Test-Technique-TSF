@@ -17,7 +17,7 @@ projet/
 ## Consignes et spécifications
 
 ### Complétion :
-- Mettre en place un système d'édition des films ?
+- Mettre en place un système d'édition des films.
 - Pensez au feedback utilisateur.
 
 ### Authentification :
@@ -47,8 +47,10 @@ projet/
 ✅ Logs des actions des utilisateurs  
 ✅ Nom des utilisateurs ayant crée le film ainsi que le nom du dernier utilisateur ayant modifier le film  
 ✅ Mise en place d'une recherche dynamic lors de la sasie dans les champs de recherche
+
 ✅ Mise en place de technique d'optimisation des requêtes.
 ✅ Une partie administrateur doit pouvoir permettre la gestion du contenu et des comptes de l'application
+
 ✅ Gestion des rôles + sécurisation des rôles
 ✅ Auto complétion lors de la recherche de logs et film (bonus)
 ✅ Recherche sur n'importe mot-clés (bonus)
