@@ -47,12 +47,12 @@ Vous pouvez inclure des scripts Bash pour simplifier les tâches répétitives :
 
 ## Points à respecter pour l'évaluation
 
-✅ Conteneurisation complète des applications PHP et Svelte (Typescript)  
-✅ Communication inter-service fonctionnelle  
-✅ Persistance des données après extinction des conteneurs  
-✅ Création automatique des bases de données avec données initiales  
-✅ Tests unitaires exécutables avec succès (facultatif)
-✅ Installation correcte des packages (composer install et npm install)  
+- ✅ Conteneurisation complète des applications PHP et Svelte (Typescript)  
+- ✅ Communication inter-service fonctionnelle  
+- ✅ Persistance des données après extinction des conteneurs  
+- ✅ Création automatique des bases de données avec données initiales  
+- ✅ Tests unitaires exécutables avec succès (facultatif)
+- ✅ Installation correcte des packages (composer install et npm install)  
 
 ## Quelques commandes utiles
 
