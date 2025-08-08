@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NkBM98nP2vMsP1xBeP9Dt2uAIWOgCA+SMt7RQjYdX4QQ2aIJnTA/6PlM5/e2ltbre7QBLf+xEQpO7Tuxtpi7pQ==",
+  "dgSpecHash": "lB5/XBypWiI=",
   "success": true,
-  "projectFilePath": "/home/aselebran/Project/testTechnique/2- C#/CrudApp/CrudApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/yamineb./_tsf2/Test-Technique-TSF/2- C#/CrudApp/CrudApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/yamineb./.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "/Users/yamineb./.nuget/packages/microsoft.aspnetcore.app.ref/8.0.13/microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
+    "/Users/yamineb./.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.13/microsoft.netcore.app.host.osx-arm64.8.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

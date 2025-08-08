@@ -1,1 +1,19 @@
 .DS_Store
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vscode
+CrupApp/bin/
+CrupApp/obj/
+CrupApp/packages/
+2- C#/CrudApp/obj/Debug/net8.0/CrudApp.assets.cache
+2- C#/CrudApp/obj/Debug/net8.0/CrudApp.AssemblyInfoInputs.cache
+2- C#/CrudApp/obj/Debug/net8.0/CrudApp.AssemblyInfo.cs
+2- C#/CrudApp/obj/project.nuget.cache
+2- C#/CrudApp/obj/project.assets.json
+2- C#/CrudApp/obj/CrudApp.csproj.nuget.g.props
+2- C#/CrudApp/obj/CrudApp.csproj.nuget.dgspec.json
