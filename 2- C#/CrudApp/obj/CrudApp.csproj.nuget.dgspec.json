@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_tsf\\Test-Technique-TSF\\2- C#\\CrudApp\\CrudApp.csproj": {}
+    "/Users/yamineb./_tsf2/Test-Technique-TSF/2- C#/CrudApp/CrudApp.csproj": {}
   },
   "projects": {
-    "C:\\_tsf\\Test-Technique-TSF\\2- C#\\CrudApp\\CrudApp.csproj": {
+    "/Users/yamineb./_tsf2/Test-Technique-TSF/2- C#/CrudApp/CrudApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_tsf\\Test-Technique-TSF\\2- C#\\CrudApp\\CrudApp.csproj",
+        "projectUniqueName": "/Users/yamineb./_tsf2/Test-Technique-TSF/2- C#/CrudApp/CrudApp.csproj",
         "projectName": "CrudApp",
-        "projectPath": "C:\\_tsf\\Test-Technique-TSF\\2- C#\\CrudApp\\CrudApp.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\_tsf\\Test-Technique-TSF\\2- C#\\CrudApp\\obj\\",
+        "projectPath": "/Users/yamineb./_tsf2/Test-Technique-TSF/2- C#/CrudApp/CrudApp.csproj",
+        "packagesPath": "/Users/yamineb./.nuget/packages/",
+        "outputPath": "/Users/yamineb./_tsf2/Test-Technique-TSF/2- C#/CrudApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/yamineb./.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -77,6 +77,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.13, 8.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.13, 8.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.13, 8.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -85,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
