@@ -3,7 +3,7 @@ services:
     build:
       context: ./Back-end/MovieApp
       dockerfile: DockerFile
-    container_name: symfony_php
+    container_name: backend-symfony_php
     ports:
       - 8000:8000
     volumes:
@@ -15,16 +15,17 @@ services:
       APP_SECRET: 9245461963b0fb0166b826b0ec1829d5
       DATABASE_URL: "mysql://root:root@db:3310/MovieApp?serverVersion=8.0.32&charset=utf8mb4"
 
-  frontend:
-    build:
-      context: ./Front-end/MovieApp
-      dockerfile: DockerFile
-    ports:
-      - 5050:80 # localhost:5050 -> nginx port 80
-    volumes:
-      - .:/app
-    environment:
-      - NODE_ENV=production
+  # frontend:
+  #   build:
+  #     context: ./Front-end/MovieApp
+  #     dockerfile: DockerFile
+  #   container_name: frontend-nginx
+  #   ports:
+  #     - 5050:80 # localhost:5050 -> nginx port 80
+  #   volumes:
+  #     - .:/app
+  #   environment:
+  #     - NODE_ENV=production
 
   db:
     image: mysql:8.0
