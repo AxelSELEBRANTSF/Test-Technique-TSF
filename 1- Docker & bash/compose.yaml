@@ -1,36 +1,35 @@
 services:
-  backend:
+  # Backend PHP-FPM
+  php:
     build:
-      context: ./Back-end/MovieApp
+      context: ./Back-End/MovieApp
       dockerfile: DockerFile
-    container_name: backend-symfony_php
-    ports:
-      - 8000:8000
+    container_name: movieapp_php
     volumes:
-      - .:/var/www/html
-    depends_on:
-      - db
+      - ./Back-End/MovieApp:/var/www/html
     environment:
-      APP_ENV: dev
-      APP_SECRET: 9245461963b0fb0166b826b0ec1829d5
-      DATABASE_URL: "mysql://root:root@db:3310/MovieApp?serverVersion=8.0.32&charset=utf8mb4"
+      - COMPOSER_ALLOW_SUPERUSER=1
+    networks:
+      - app-network
 
-  # frontend:
-  #   build:
-  #     context: ./Front-end/MovieApp
-  #     dockerfile: DockerFile
-  #   container_name: frontend-nginx
+  # Nginx pour Symfony
+  # nginx:
+  #   image: nginx:1.27
+  #   container_name: movieapp_nginx
+  #   depends_on:
+  #     - php
   #   ports:
-  #     - 5050:80 # localhost:5050 -> nginx port 80
+  #     - "8000:80" # backend accessible sur http://localhost:8000
   #   volumes:
-  #     - .:/app
-  #   environment:
-  #     - NODE_ENV=production
+  #     - ./Back-End/MovieApp:/var/www/html:ro
+  #     - ./nginx/backend.conf:/etc/nginx/conf.d/default.conf:ro
+  #   networks:
+  #     - app-network
 
   db:
     image: mysql:8.0
     container_name: mysql-db
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: MovieApp
@@ -42,6 +41,12 @@ services:
       - db_data:/var/lib/mysql
       - ./mysql-config:/etc/mysql/conf.d
       - ./db:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
 
 volumes:
   db_data:
+
+networks:
+  app-network:
+    driver: bridge
