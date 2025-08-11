@@ -1,51 +1,48 @@
 services:
-  # Backend PHP-FPM
-  php:
-    build:
-      context: ./Back-End/MovieApp
-      dockerfile: DockerFile
-    container_name: symfony_php
-    ports:
-      - 8000:8000
-    volumes:
-      - ./Back-End/MovieApp:/var/www/html
-    environment:
-      APP_ENV: dev
-      APP_SECRET: 9245461963b0fb0166b826b0ec1829d5
-      DATABASE_URL: "mysql://root:root@db:3310/MovieApp?serverVersion=8.0.32&charset=utf8mb4"
-
-  frontend:
-    build:
-      context: ./Front-end/MovieApp
-      dockerfile: DockerFile
-    ports:
-      - 5050:80 # localhost:5050 -> nginx port 80
-    volumes:
-      - .:/app
-    environment:
-      - NODE_ENV=production
-
   db:
     image: mysql:8.0
-    container_name: mysql-db
-    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: MovieApp
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     ports:
-      - 3310:3306
+      - "3310:3306"
     volumes:
       - db_data:/var/lib/mysql
       - ./mysql-config:/etc/mysql/conf.d
-      - ./db:/docker-entrypoint-initdb.d
-    networks:
-      - app-network
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  php:
+    build:
+      context: ./Back-end/MovieApp
+      dockerfile: Dockerfile
+    volumes:
+      - ./Back-end/MovieApp/:/var/www
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.17
+    ports:
+      - "8000:80"
+    volumes:
+      - ./Back-end/MovieApp/public:/var/www/public
+      - ./Back-end/MovieApp/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  svelete-app:
+    build:
+      context: ./Front-end/MovieApp
+    ports:
+      - "5173:5173"
+    environment:
+      NODE_ENV: development
+      URL_API: http://127.0.0.1:8000/
+    volumes:
+      - ./Front-end/MovieApp:/app
+      - /app/node_modules
 
 volumes:
   db_data:
-
-networks:
-  app-network:
-    driver: bridge

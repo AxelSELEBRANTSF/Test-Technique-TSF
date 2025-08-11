@@ -1,36 +1,19 @@
 FROM php:8.3-fpm
-
-# Install dependencies
 RUN apt-get update && apt-get install -y \
-    git unzip libicu-dev libzip-dev libpng-dev libxml2-dev libonig-dev \
-    && docker-php-ext-install intl pdo pdo_mysql zip gd opcache \
-    && rm -rf /var/lib/apt/lists/*
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip
 
-# Install Composer
-COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Install Symfony CLI (optional)
-RUN curl -sS https://get.symfony.com/cli/installer | bash \
-    && mv /root/.symfony*/bin/symfony /usr/local/bin/symfony
-
-WORKDIR /var/www/html
-
-# Copy composer files only (better cache)
-COPY composer.json composer.lock ./
-
-# Install PHP dependencies without running scripts
-#RUN composer install --no-scripts --no-interaction --prefer-dist || true
-
-# Now copy the rest of the code
-COPY . .
-
-ENV COMPOSER_ALLOW_SUPERUSER=1
-
-RUN composer install --no-interaction --prefer-dist
-
-# Run composer install again (scripts enabled this time)
-#RUN composer install --no-interaction --prefer-dist
-
-EXPOSE 9000
+WORKDIR /var/www
+COPY . /var/www
+RUN composer install
 
 CMD ["php-fpm"]
+EXPOSE 9000
