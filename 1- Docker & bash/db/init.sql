@@ -1,15 +1,15 @@
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE movie (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS movie (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     production VARCHAR(255) NOT NULL,
     director VARCHAR(255) NOT NULL,
     start_date DATE,
-    enddate DATE,
+    enddate DATE
 );
 
 INSERT INTO users (username) VALUES ('alice'), ('bob');
