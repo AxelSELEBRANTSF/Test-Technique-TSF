@@ -10,12 +10,11 @@ L'objectif de cet exercice est de développer une application web CRUD (Create, 
 
 ## Structure du projet
 ```bash
-projet-crud-csharp/
-├── src/
-│   └── CrudApp/                 # C# Application
-├── compose.yml                  # Docker services configuration
-├── scripts/ (facultatif)        # Script additionnel
-└── README.md                    # Ce fichier
+2- C#/
+├── CrudApp/                 # C# Application
+├── 2- C#.sln                # Le fichier de solution de l'application
+├── scripts/ (facultatif)    # Script additionnel
+└── README.md                # Ce fichier
 ```
 
 ## Critères de validation

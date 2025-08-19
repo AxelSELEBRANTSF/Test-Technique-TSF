@@ -5,7 +5,7 @@ Cet exercice consiste à ingétrer de nouvelles fonctionnalités dans la premiè
 ## Structure du projet
 
 ```bash
-projet/
+3- Cas concret/
 ├── Back-End/MovieApp              # Application backend PHP
 ├── Front-end/MovieApp             # Application frontend TypeScript
 ├── compose.yaml                   # Docker Compose principal (déjà existant avec MySQL et ce que vous avez pu faire précédemment)

@@ -5,7 +5,7 @@ Cet exercice consiste à conteneuriser une application web composée d'un backen
 ## Structure du projet
 
 ```bash
-projet/
+1- Docker & bash/
 ├── Back-End/MovieApp              # Application backend PHP
 ├── Front-end/MovieApp             # Application frontend TypeScript
 ├── compose.yaml                   # Docker Compose principal (déjà existant avec MySQL)
