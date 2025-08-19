@@ -1,0 +1,13 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/2- C#/.vs/2- C#/CopilotIndices/17.14.995.13737
+/2- C#/.vs/2- C#/DesignTimeBuild
+/2- C#/.vs/2- C#/FileContentIndex
+/2- C#/.vs/2- C#/v17
+/2- C#/.vs/2- C#/config
+/2- C#/CrudApp/.vs
+/2- C#/CrudApp/bin
+/2- C#/CrudApp/obj

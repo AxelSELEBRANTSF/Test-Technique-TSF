@@ -1,0 +1,19 @@
+﻿@model CrudApp.Models.Product
+@{
+    ViewData["Title"] = "Delete Product";
+}
+<h1>Delete Product</h1>
+<h4>Are you sure you want to delete this?</h4>
+
+<div class="mb-3">
+    <h5>@Model.Name</h5>
+    <p>Price: @Model.Price</p>
+    <p>Stock: @Model.Stock</p>
+    <p>@Model.Description</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" href="@Url.Action("Index")">Back to List</a>
+</form>
