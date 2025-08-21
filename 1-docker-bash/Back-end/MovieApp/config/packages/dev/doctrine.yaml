@@ -1,0 +1,16 @@
+doctrine:
+  dbal:
+    # garde ton URL actuelle si tu en as une, ne duplique pas ce bloc si déjà présent
+    url: '%env(resolve:DATABASE_URL)%'
+
+    # on veut voir ce que Doctrine envoie à MySQL
+    logging: true
+    profiling: true
+
+    # ces options ne cassent rien en dev
+    use_savepoints: true
+
+  orm:
+    auto_generate_proxy_classes: true
+    enable_lazy_ghost_objects: true
+    # si tu as déjà un bloc orm, garde tes mappings/auto_mapping/etc.

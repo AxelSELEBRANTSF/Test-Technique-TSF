@@ -1,0 +1,17 @@
+-- 00_init.sql
+CREATE DATABASE IF NOT EXISTS MovieApp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE MovieApp;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS movie (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    production VARCHAR(255) NOT NULL,
+    director VARCHAR(255) NOT NULL,
+    start_date DATE,
+    end_date DATE
+);
