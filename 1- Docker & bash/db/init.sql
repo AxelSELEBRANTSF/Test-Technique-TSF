@@ -9,7 +9,7 @@ CREATE TABLE movie (
     production VARCHAR(255) NOT NULL,
     director VARCHAR(255) NOT NULL,
     start_date DATE,
-    enddate DATE,
+    enddate DATE
 );
 
 INSERT INTO users (username) VALUES ('alice'), ('bob');
